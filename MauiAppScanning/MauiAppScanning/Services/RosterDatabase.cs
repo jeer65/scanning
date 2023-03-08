@@ -18,14 +18,18 @@ namespace MauiAppScanning.Services
             if (Database is not null)
                 return;
 
-            
-            using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync(RosterDataConstants.DatabaseFilename);
+            if (!File.Exists(RosterDataConstants.DatabasePath))
+            {
+                using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync(RosterDataConstants.DatabaseFilename);
+                using Stream dbStream = File.OpenWrite(RosterDataConstants.DatabasePath);
+                fileStream.CopyTo(dbStream);
 
-            using Stream dbStream =  File.OpenWrite(RosterDataConstants.DatabasePath);
-            fileStream.CopyTo(dbStream);
+                fileStream.Dispose();
+                dbStream.Dispose();
+            }
 
             Database = new SQLiteAsyncConnection(RosterDataConstants.DatabasePath, RosterDataConstants.Flags);
-            var result = await Database.CreateTableAsync<Roster>();
+            //var result = await Database.CreateTableAsync<Roster>();
         }
 
         public async Task<List<Roster>> GetItemsAsync()

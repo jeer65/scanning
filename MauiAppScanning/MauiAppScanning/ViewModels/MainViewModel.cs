@@ -4,7 +4,8 @@ public partial class MainViewModel : BaseViewModel
 {
     private RosterDatabase _rosterDatabase;
 
-    ObservableCollection<Roster> rosters;
+    [ObservableProperty]
+    public ObservableCollection<Roster> rosters = new();
 
     [ObservableProperty]
     Roster selectedRoster;
@@ -19,6 +20,6 @@ public partial class MainViewModel : BaseViewModel
     public async Task LoadFile()
     {
         var items = await _rosterDatabase.GetItemsAsync();
-        Debug.WriteLine (items.Count);
+        Rosters = new ObservableCollection<Roster>(items);        
     }
 }

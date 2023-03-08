@@ -1,1 +1,1 @@
-C:\Users\u40714\Documents\Project\Scanning\code\MauiAppScanning\MauiAppScanning\MauiAppScanning.csproj;x64
+c:\repos-dte\scanning\MauiAppScanning\MauiAppScanning\MauiAppScanning.csproj;x64

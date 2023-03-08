@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\u40714\\Documents\\Project\\Scanning\\code\\MauiAppScanning\\MauiAppScanning\\MauiAppScanning.csproj": {}
+    "c:\\repos-dte\\scanning\\MauiAppScanning\\MauiAppScanning\\MauiAppScanning.csproj": {}
   },
   "projects": {
-    "C:\\Users\\u40714\\Documents\\Project\\Scanning\\code\\MauiAppScanning\\MauiAppScanning\\MauiAppScanning.csproj": {
+    "c:\\repos-dte\\scanning\\MauiAppScanning\\MauiAppScanning\\MauiAppScanning.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\u40714\\Documents\\Project\\Scanning\\code\\MauiAppScanning\\MauiAppScanning\\MauiAppScanning.csproj",
+        "projectUniqueName": "c:\\repos-dte\\scanning\\MauiAppScanning\\MauiAppScanning\\MauiAppScanning.csproj",
         "projectName": "MauiAppScanning",
-        "projectPath": "C:\\Users\\u40714\\Documents\\Project\\Scanning\\code\\MauiAppScanning\\MauiAppScanning\\MauiAppScanning.csproj",
-        "packagesPath": "C:\\Users\\u40714\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\u40714\\Documents\\Project\\Scanning\\code\\MauiAppScanning\\MauiAppScanning\\obj\\",
+        "projectPath": "c:\\repos-dte\\scanning\\MauiAppScanning\\MauiAppScanning\\MauiAppScanning.csproj",
+        "packagesPath": "C:\\Users\\stacy\\.nuget\\packages\\",
+        "outputPath": "c:\\repos-dte\\scanning\\MauiAppScanning\\MauiAppScanning\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\u40714\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -31,7 +31,8 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/tgLRcvIURlxe6xTXS3fMBvQqkxxY3hx2yDhlwY1Eqden7bzMdS/api": {}
         },
         "frameworks": {
           "net7.0-android33.0": {
