@@ -1,38 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 xmlns:vm="clr-namespace:MauiAppScanning.ViewModels"
-             xmlns:models="clr-namespace:MauiAppScanning.Models"
-			 x:Class="MauiAppScanning.Views.MainPage"
-			 x:DataType="vm:MainViewModel">
-    <ScrollView>
-        <VerticalStackLayout Margin="12">
-            <Button
-                Text="Test File"
-                Command="{Binding LoadFileCommand}"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"/>
-            <CollectionView ItemsSource="{Binding Rosters}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate
-                        x:DataType="models:Roster">
-                        <HorizontalStackLayout
-                            Spacing="10">
-                            <Label
-                                Text="{Binding Firstname}"
-                                FontSize="Body"
-                                VerticalOptions="Center"
-                                VerticalTextAlignment="Center" />
-                            <Label
-                                Text="{Binding Lastname}"
-                                FontSize="Caption"
-                                VerticalOptions="Center"
-                                VerticalTextAlignment="Center" />
-                        </HorizontalStackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MauiAppScanning.ViewModels"
+    xmlns:models="clr-namespace:MauiAppScanning.Models"
+    x:Class="MauiAppScanning.Views.MainPage"
+    x:DataType="vm:MainViewModel">
+    <VerticalStackLayout
+        Margin="12">
 
-            </CollectionView>
-        </VerticalStackLayout>
-    </ScrollView>
+        <Editor
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="300"
+            Text="{Binding BarcodeData}" />
+
+        <Button
+            Text="Check In"
+            Command="{Binding ParseBarcodeCommand}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
+
+        <Grid
+            RowDefinitions="*,*,*"
+            ColumnDefinitions="*,*"
+            RowSpacing="5">
+            <Label
+                Text="Name:" />
+            <Label
+                Grid.Column="1"
+                Text="{Binding Mode=OneWay, Path=IdCard.Name}" />
+            <Label
+                Grid.Row="1"
+                Text="Date of birth:" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                Text="{Binding Mode=OneTime, Path=IdCard.DateOfBirth, StringFormat='{0:yyyy/MM/dd}'}" />
+            <Label
+                Grid.Row="2"
+                Text="Sex" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Text="{Binding Mode=OneWay, Path=IdCard.Sex}" />
+        </Grid>
+
+        <Grid
+            RowDefinitions="*,*,3*"
+            RowSpacing="5">
+            <Label
+                Text="{Binding Mode=OneWay, Path=IdCard.Address.StreetLine1}" />
+            <Label
+                Grid.Row="1">
+                <Label.Text>
+                    <MultiBinding
+                        StringFormat="{}{0}, {1}">
+                        <Binding
+                            Path="IdCard.Address.City" />
+                        <Binding
+                            Path="IdCard.Address.JurisdictionCode" />
+                    </MultiBinding>
+                </Label.Text>
+            </Label>
+
+            <Label
+                Grid.Row="2">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text="{Binding IdCard.Address.StreetLine1, StringFormat='{0} &#10;'}" />
+                        <Span
+                            Text="{Binding IdCard.Address.City, StringFormat='{0},'}" />
+                        <Span
+                            Text="{Binding IdCard.Address.JurisdictionCode, StringFormat='{0} &#10;'}" />
+                        <Span
+                            Text="{Binding IdCard.Address.PostalCode, StringFormat='Postal Code {0}'}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Grid>
+    </VerticalStackLayout>
 </ContentPage>

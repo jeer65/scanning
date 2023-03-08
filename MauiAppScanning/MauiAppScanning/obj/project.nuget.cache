@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "w15ridS/pqcbcArcO+BudCu5ugKll1y+tK+5ZkyRKN64w42L3mm7lprGbRGoz81zlY/hFMNkkVz0in2XzCM0sg==",
+  "dgSpecHash": "hknf7Y0L2VvewAdbKwCl0lznjycjx8LqffeY0CIIxjt6TGO4HpfuCA2Y0I3xpny++yp+pGie+x8/svmfxr7hVQ==",
   "success": true,
   "projectFilePath": "c:\\repos-dte\\scanning\\MauiAppScanning\\MauiAppScanning\\MauiAppScanning.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\stacy\\.nuget\\packages\\communitytoolkit.maui.core\\3.1.0\\communitytoolkit.maui.core.3.1.0.nupkg.sha512",
     "C:\\Users\\stacy\\.nuget\\packages\\communitytoolkit.mvvm\\8.1.0\\communitytoolkit.mvvm.8.1.0.nupkg.sha512",
     "C:\\Users\\stacy\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
+    "C:\\Users\\stacy\\.nuget\\packages\\idparser\\4.1.2\\idparser.4.1.2.nupkg.sha512",
     "C:\\Users\\stacy\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\stacy\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\stacy\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",

@@ -712,3 +712,4 @@ c:\repos-dte\scanning\MauiAppScanning\MauiAppScanning\obj\Debug\net7.0-windows10
 c:\repos-dte\scanning\MauiAppScanning\MauiAppScanning\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 c:\repos-dte\scanning\MauiAppScanning\MauiAppScanning\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 c:\repos-dte\scanning\MauiAppScanning\MauiAppScanning\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+c:\repos-dte\scanning\MauiAppScanning\MauiAppScanning\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\IdParser.dll

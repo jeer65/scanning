@@ -11,6 +11,7 @@
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.1.0",
           "CommunityToolkit.Maui": "3.1.0",
+          "IdParser": "4.1.2",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0",
@@ -827,6 +828,14 @@
           }
         }
       },
+      "IdParser/4.1.2": {
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.1.2.0"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
@@ -1147,6 +1156,13 @@
       "sha512": "sha512-xxOt7lu9a5kB5Fs9RfcxzVlKnhuuPe+w7AXHtmCFtS3oldrsUhEMxHfNulluXSscUUoGxZ0jh55Om12ZP6abHA==",
       "path": "communitytoolkit.mvvm/8.1.0",
       "hashPath": "communitytoolkit.mvvm.8.1.0.nupkg.sha512"
+    },
+    "IdParser/4.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oz4omg4skZxb9u5DPbqux6avsG2tqWvzlfpGSza0UowJy7aWJcWo/MKBhm4wJiWfCpaLKcT8Lyz3uxoZd4AbzQ==",
+      "path": "idparser/4.1.2",
+      "hashPath": "idparser.4.1.2.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/7.0.0": {
       "type": "package",

@@ -60,6 +60,19 @@
           }
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -2233,6 +2246,19 @@
         "runtime": {
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
+          }
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -4412,6 +4438,19 @@
           }
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -6585,6 +6624,19 @@
         "runtime": {
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
+          }
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -8764,6 +8816,19 @@
           }
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -10937,6 +11002,19 @@
         "runtime": {
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
+          }
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -13116,6 +13194,19 @@
           }
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -15292,6 +15383,19 @@
           }
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -17455,6 +17559,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -17820,6 +17937,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -18132,6 +18262,19 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -18448,6 +18591,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -18760,6 +18916,19 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -19076,6 +19245,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -19387,6 +19569,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -19696,6 +19891,19 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -20010,6 +20218,19 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -20377,6 +20598,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -20689,6 +20923,19 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -21005,6 +21252,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -21317,6 +21577,19 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -21633,6 +21906,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -21944,6 +22230,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -22253,6 +22552,19 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -22567,6 +22879,19 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -23072,6 +23397,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -23494,6 +23832,19 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -23920,6 +24271,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -24342,6 +24706,19 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -24768,6 +25145,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -25189,6 +25579,19 @@
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
         }
       },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -25608,6 +26011,19 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "IdParser/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdParser.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -26096,6 +26512,21 @@
         "lib/net6.0-android31.0/GoogleGson.aar",
         "lib/net6.0-android31.0/GoogleGson.dll",
         "lib/net6.0-android31.0/GoogleGson.xml"
+      ]
+    },
+    "IdParser/4.1.2": {
+      "sha512": "oz4omg4skZxb9u5DPbqux6avsG2tqWvzlfpGSza0UowJy7aWJcWo/MKBhm4wJiWfCpaLKcT8Lyz3uxoZd4AbzQ==",
+      "type": "package",
+      "path": "idparser/4.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "idparser.4.1.2.nupkg.sha512",
+        "idparser.nuspec",
+        "lib/net45/IdParser.dll",
+        "lib/net45/IdParser.xml",
+        "lib/netstandard2.0/IdParser.dll",
+        "lib/netstandard2.0/IdParser.xml"
       ]
     },
     "Microsoft.Extensions.Configuration/7.0.0": {
@@ -29667,6 +30098,7 @@
     "net7.0-android33.0": [
       "CommunityToolkit.MVVM >= 8.1.0",
       "CommunityToolkit.Maui >= 3.1.0",
+      "IdParser >= 4.1.2",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -29689,6 +30121,7 @@
     "net7.0-ios16.1": [
       "CommunityToolkit.MVVM >= 8.1.0",
       "CommunityToolkit.Maui >= 3.1.0",
+      "IdParser >= 4.1.2",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -29700,6 +30133,7 @@
     "net7.0-maccatalyst16.1": [
       "CommunityToolkit.MVVM >= 8.1.0",
       "CommunityToolkit.Maui >= 3.1.0",
+      "IdParser >= 4.1.2",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -29711,6 +30145,7 @@
     "net7.0-windows10.0.19041": [
       "CommunityToolkit.MVVM >= 8.1.0",
       "CommunityToolkit.Maui >= 3.1.0",
+      "IdParser >= 4.1.2",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -29792,6 +30227,10 @@
           "CommunityToolkit.Maui": {
             "target": "Package",
             "version": "[3.1.0, )"
+          },
+          "IdParser": {
+            "target": "Package",
+            "version": "[4.1.2, )"
           },
           "Microsoft.Extensions.Configuration": {
             "target": "Package",
@@ -29923,6 +30362,10 @@
             "target": "Package",
             "version": "[3.1.0, )"
           },
+          "IdParser": {
+            "target": "Package",
+            "version": "[4.1.2, )"
+          },
           "Microsoft.Extensions.Configuration": {
             "target": "Package",
             "version": "[7.0.0, )",
@@ -29997,6 +30440,10 @@
           "CommunityToolkit.Maui": {
             "target": "Package",
             "version": "[3.1.0, )"
+          },
+          "IdParser": {
+            "target": "Package",
+            "version": "[4.1.2, )"
           },
           "Microsoft.Extensions.Configuration": {
             "target": "Package",
@@ -30073,6 +30520,10 @@
           "CommunityToolkit.Maui": {
             "target": "Package",
             "version": "[3.1.0, )"
+          },
+          "IdParser": {
+            "target": "Package",
+            "version": "[4.1.2, )"
           },
           "Microsoft.Extensions.Configuration": {
             "target": "Package",

@@ -70,6 +70,10 @@
               "target": "Package",
               "version": "[3.1.0, )"
             },
+            "IdParser": {
+              "target": "Package",
+              "version": "[4.1.2, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[7.0.0, )",
@@ -200,6 +204,10 @@
               "target": "Package",
               "version": "[3.1.0, )"
             },
+            "IdParser": {
+              "target": "Package",
+              "version": "[4.1.2, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[7.0.0, )",
@@ -274,6 +282,10 @@
             "CommunityToolkit.Maui": {
               "target": "Package",
               "version": "[3.1.0, )"
+            },
+            "IdParser": {
+              "target": "Package",
+              "version": "[4.1.2, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
@@ -350,6 +362,10 @@
             "CommunityToolkit.Maui": {
               "target": "Package",
               "version": "[3.1.0, )"
+            },
+            "IdParser": {
+              "target": "Package",
+              "version": "[4.1.2, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
