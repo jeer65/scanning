@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:vm="clr-namespace:MauiAppScanning.ViewModels"
+			 x:Class="MauiAppScanning.Views.MainPage"
+			 x:DataType="vm:MainViewModel">
+    <ScrollView>
+        <VerticalStackLayout Margin="12">
+            <Button Text="Test File"  Command="{Binding LoadFileCommand}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
