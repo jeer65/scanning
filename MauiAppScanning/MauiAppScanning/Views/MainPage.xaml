@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:MauiAppScanning.ViewModels"
     xmlns:models="clr-namespace:MauiAppScanning.Models"
+	xmlns:system="clr-namespace:System;assembly=netstandard"
     x:Class="MauiAppScanning.Views.MainPage"
     x:DataType="vm:MainViewModel">
 	<VerticalStackLayout Spacing="25"
@@ -20,7 +21,7 @@
 				HorizontalOptions="Center" />
 
 		<Grid RowDefinitions="*,*,*,*,3*"
-			  ColumnDefinitions="*,*"
+			  ColumnDefinitions="2*,3*"
 			  RowSpacing="5">
 			<Label Grid.Row="0"
 				   Grid.Column="0"
@@ -44,7 +45,7 @@
 			<Label Grid.Row="2"
 				   Grid.Column="1"
 				   FontAttributes="Bold"
-				   Text="{Binding Mode=OneTime, Path=IdCard.DateOfBirth, StringFormat='{0:MM/dd/yyyy}'}" />
+				   Text="{Binding Mode=OneTime, Path=IdCard.DateOfBirth}" />
 
 			<Label Grid.Row="3"
 				   Grid.Column="0"
@@ -62,10 +63,11 @@
 				   FontAttributes="Bold">
 				<Label.FormattedText>
 					<FormattedString>
-						<Span Text="{Binding IdCard.Address.StreetLine1, StringFormat='{0} &#10;'}" />
-						<Span Text="{Binding IdCard.Address.City, StringFormat='{0},'}" />
-						<Span Text="{Binding IdCard.Address.JurisdictionCode, StringFormat='{0} &#10;'}" />
-						<Span Text="{Binding IdCard.Address.PostalCode, StringFormat='Postal Code {0}'}" />
+						<Span Text="{Binding IdCard.Address.StreetLine1, StringFormat='{0}'}" />
+						<Span Text="{x:Static system:Environment.NewLine}"/>
+						<Span Text="{Binding IdCard.Address.City, StringFormat='{0}, '}" />
+						<Span Text="{Binding IdCard.Address.JurisdictionCode, StringFormat='{0} '}" />
+						<Span Text="{Binding IdCard.Address.PostalCode, StringFormat='{0}'}" />
 					</FormattedString>
 				</Label.FormattedText>
 			</Label>
