@@ -4,84 +4,73 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:MauiAppScanning.ViewModels"
     xmlns:models="clr-namespace:MauiAppScanning.Models"
+	xmlns:system="clr-namespace:System;assembly=netstandard"
     x:Class="MauiAppScanning.Views.MainPage"
     x:DataType="vm:MainViewModel">
-    <VerticalStackLayout
-        Spacing="25"
-        Padding="30,0"
-        VerticalOptions="Start"
-        >
+	<VerticalStackLayout Spacing="25"
+						 Padding="30,0"
+						 VerticalOptions="Start">
+		<Editor HorizontalOptions="Center"
+				VerticalOptions="Center"
+				WidthRequest="300"
+				Text="{Binding BarcodeData}" />
 
-        <Editor
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
-            WidthRequest="300"
-            Text="{Binding BarcodeData}" />
+		<Button Text="Check In"
+				Command="{Binding ParseBarcodeCommand}"
+				VerticalOptions="Center"
+				HorizontalOptions="Center" />
 
-        <Button
-            Text="Check In"
-            Command="{Binding ParseBarcodeCommand}"
-            VerticalOptions="Center"
-            HorizontalOptions="Center" />
+		<Grid RowDefinitions="*,*,*,*,3*"
+			  ColumnDefinitions="2*,3*"
+			  RowSpacing="5">
+			<Label Grid.Row="0"
+				   Grid.Column="0"
+				   Text="License#:" />
+			<Label Grid.Row="0"
+				   Grid.Column="1"
+				   FontAttributes="Bold"
+				   Text="{Binding Mode=OneWay, Path=IdCard.IdNumber}" />
 
-        <Grid
-            RowDefinitions="*,*,*"
-            ColumnDefinitions="*,*"
-            RowSpacing="5">
-            <Label
-                Text="Name:" />
-            <Label
-                Grid.Column="1"
-                Text="{Binding Mode=OneWay, Path=IdCard.Name}" />
-            <Label
-                Grid.Row="1"
-                Text="Date of birth:" />
-            <Label
-                Grid.Row="1"
-                Grid.Column="1"
-                Text="{Binding Mode=OneTime, Path=IdCard.DateOfBirth, StringFormat='{0:yyyy/MM/dd}'}" />
-            <Label
-                Grid.Row="2"
-                Text="Sex" />
-            <Label
-                Grid.Row="2"
-                Grid.Column="1"
-                Text="{Binding Mode=OneWay, Path=IdCard.Sex}" />
-        </Grid>
+			<Label Grid.Row="1"
+				   Grid.Column="0"
+				   Text="Name:" />
+			<Label Grid.Row="1"
+				   Grid.Column="1"
+				   FontAttributes="Bold"
+				   Text="{Binding Mode=OneWay, Path=IdCard.Name}" />
 
-        <Grid
-            RowDefinitions="*,*,3*"
-            RowSpacing="5">
-            <Label
-                Text="{Binding Mode=OneWay, Path=IdCard.Address.StreetLine1}" />
-            <Label
-                Grid.Row="1">
-                <Label.Text>
-                    <MultiBinding
-                        StringFormat="{}{0}, {1}">
-                        <Binding
-                            Path="IdCard.Address.City" />
-                        <Binding
-                            Path="IdCard.Address.JurisdictionCode" />
-                    </MultiBinding>
-                </Label.Text>
-            </Label>
+			<Label Grid.Row="2"
+				   Grid.Column="0"
+				   Text="Date of Birth:" />
+			<Label Grid.Row="2"
+				   Grid.Column="1"
+				   FontAttributes="Bold"
+				   Text="{Binding Mode=OneTime, Path=IdCard.DateOfBirth}" />
 
-            <Label
-                Grid.Row="2">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span
-                            Text="{Binding IdCard.Address.StreetLine1, StringFormat='{0} &#10;'}" />
-                        <Span
-                            Text="{Binding IdCard.Address.City, StringFormat='{0},'}" />
-                        <Span
-                            Text="{Binding IdCard.Address.JurisdictionCode, StringFormat='{0} &#10;'}" />
-                        <Span
-                            Text="{Binding IdCard.Address.PostalCode, StringFormat='Postal Code {0}'}" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-        </Grid>
-    </VerticalStackLayout>
+			<Label Grid.Row="3"
+				   Grid.Column="0"
+				   Text="Sex:" />
+			<Label Grid.Row="3"
+				   Grid.Column="1"
+				   FontAttributes="Bold"
+				   Text="{Binding Mode=OneWay, Path=IdCard.Sex}" />
+
+			<Label Grid.Row="4"
+				   Grid.Column="0"
+				   Text="Address:" />
+			<Label Grid.Row="4"
+				   Grid.Column="1"
+				   FontAttributes="Bold">
+				<Label.FormattedText>
+					<FormattedString>
+						<Span Text="{Binding IdCard.Address.StreetLine1, StringFormat='{0}'}" />
+						<Span Text="{x:Static system:Environment.NewLine}"/>
+						<Span Text="{Binding IdCard.Address.City, StringFormat='{0}, '}" />
+						<Span Text="{Binding IdCard.Address.JurisdictionCode, StringFormat='{0} '}" />
+						<Span Text="{Binding IdCard.Address.PostalCode, StringFormat='{0}'}" />
+					</FormattedString>
+				</Label.FormattedText>
+			</Label>
+		</Grid>
+	</VerticalStackLayout>
 </ContentPage>

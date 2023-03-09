@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>MauiAppScanning</RootNamespace>
@@ -46,18 +46,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Database\Scan.db" />
+		<None Remove="Resources\Database\Scan.db" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Maui" Version="3.1.0" />
-	  <PackageReference Include="CommunityToolkit.MVVM" Version="8.1.0" />
-	  <PackageReference Include="IdParser" Version="4.1.2" />
-	  <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.58" />
-	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="3.1.0" />
+		<PackageReference Include="CommunityToolkit.MVVM" Version="8.1.0" />
+		<PackageReference Include="IdParser" Version="4.1.2" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.58" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<Compile Update="Platforms\iOS\CustomMediaPicker.cs">
+		  <ExcludeFromCurrentConfiguration>false</ExcludeFromCurrentConfiguration>
+		</Compile>
+		<Compile Update="Platforms\iOS\DynamsoftBarcodeQRCodeService.cs">
+		  <ExcludeFromCurrentConfiguration>false</ExcludeFromCurrentConfiguration>
+		</Compile>
 		<Compile Update="Resources\Strings\AppResources.es.Designer.cs">
 			<DependentUpon>AppResources.es.resx</DependentUpon>
 			<DesignTime>True</DesignTime>
@@ -82,8 +88,26 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Data\" />
-	  <Folder Include="Resources\Database\" />
+		<Folder Include="Data\" />
+		<Folder Include="Resources\Database\" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+		<PackageReference Include="Barcode.NET.Mobile">
+			<Version>1.0.2</Version>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
+		<PackageReference Include="Barcode.NET.Mobile">
+			<Version>1.0.2</Version>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('-windows')) == true">
+		<PackageReference Include="BarcodeQRCodeSDK">
+			<Version>2.1.0</Version>
+		</PackageReference>
 	</ItemGroup>
 
 	<PropertyGroup Label="MauiAppAccelerator">
