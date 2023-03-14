@@ -11,10 +11,8 @@ public partial class ListDetailPage : ContentPage
 		BindingContext = ViewModel = viewModel;
 	}
 
-	protected override async void OnNavigatedTo(NavigatedToEventArgs args)
+	protected override void OnNavigatedTo(NavigatedToEventArgs args)
 	{
 		base.OnNavigatedTo(args);
-
-		await ViewModel.LoadDataAsync();
 	}
 }

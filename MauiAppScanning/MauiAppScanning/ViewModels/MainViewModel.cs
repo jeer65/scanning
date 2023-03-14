@@ -1,92 +1,120 @@
-﻿using IdParser;
+﻿using BarcodeScanner.Mobile;
+using CommunityToolkit.Diagnostics;
+using CommunityToolkit.Maui.Core.Views;
+using Dapper;
+using IdParser;
+using Microsoft.Data.SqlClient;
+using System.Runtime.Versioning;
 
 namespace MauiAppScanning.ViewModels;
 
 public partial class MainViewModel : BaseViewModel
 {
-	private DynamsoftBarcodeQRCodeService _barcodeQRCodeService;
-	private RosterDatabase _rosterDatabase;
-	private IMediaPicker _mediaPicker;
+    private readonly LocalDataService localDataService;
 
-	[ObservableProperty]
-	private ObservableCollection<Roster> rosters = new();
+    [ObservableProperty]
+    private bool isScanning = true;
 
-	[ObservableProperty]
-	private string barcodeData;
+    [ObservableProperty]
+    private bool torchOn = false;
 
-	[ObservableProperty]
-	IdentificationCard idCard;
+    [ObservableProperty]
+    private bool vibrationDetected = true;
 
-	public MainViewModel(RosterDatabase rosterDatabase, IMediaPicker mediaPicker)
-	{
-		_rosterDatabase = rosterDatabase;
+    [ObservableProperty]
+    private IdentificationCard idCard;
 
-		_mediaPicker = mediaPicker;
+    public MainViewModel(LocalDataService localDataService)
+    {
+        this.localDataService = localDataService;
+    }
 
-		InitService();
-	}
+    [RelayCommand]
+    public void BarcodeDetected(OnDetectedEventArg barcodeData)
+    {
+        if (barcodeData?.BarcodeResults?.Count == 0)
+            return;
 
-	[RelayCommand]
-	public async void ParseBarcode()
-	{
-		try
-		{
-			if (_mediaPicker.IsCaptureSupported)
-			{
-				var photo = await _mediaPicker.CapturePhotoAsync();
+        var data = barcodeData.BarcodeResults[0];
+        if (data.BarcodeFormat != BarcodeFormats.Pdf417)
+            return;
 
-				if (photo == null) return;
+        try
+        {
+            IdCard = Barcode.Parse(barcodeData.BarcodeResults[0].RawValue);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine(ex.Message);
+            //TODO: Log the exception
+        }
+    }
 
-				// save the file into local storage
-				var localFolder = FileSystem.AppDataDirectory;
-				var localFilePath = Path.Combine(localFolder, photo.FileName);
-#if WINDOWS
-				// on Windows file.OpenReadAsync() throws an exception
-				using Stream sourceStream = File.OpenRead(photo.FullPath);
-#else
-				using Stream sourceStream = await photo.OpenReadAsync();
-#endif
-				using FileStream localFileStream = File.OpenWrite(localFilePath);
+    [RelayCommand]
+    public async Task CheckIn()
+    {
+        try
+        {
+            //TODO: Replace this with a better matching strategy. (e.g., Levenshtein or other)
+            var lastName = IdCard.Name.Last.ToLower();
+            var matches = localDataService.Find<CrewMember>(c => c.LastName.ToLower() == lastName);
 
-				await sourceStream.CopyToAsync(localFileStream);
+            if (!matches.Any())
+            {
+                await Shell.Current.DisplayAlert("No matches found", $"No crew members found with the last name {IdCard.Name.Last}", "OK");
+                //TODO: Implement manual add process.
+                return;
+            }
 
-				var result = _barcodeQRCodeService.DecodeFile(localFilePath);
+            var crewMember = matches.First(); //TODO: Select from instead of grabbing the first one
 
-				if (!string.IsNullOrWhiteSpace(result) && !result.Equals("No barcode found.", StringComparison.OrdinalIgnoreCase))
-				{
-					IdCard = Barcode.Parse(result);
-				}
-			}
-		}
-		catch (Exception ex)
-		{
-			Console.WriteLine(ex.Message);
-		}
-	}
+            if (IdCard.ExpirationDate <= DateTime.Now)
+            {
+                bool isOk = await Shell.Current.DisplayAlert("License Expired", "Do you agree to working without driving?", "Yes", "No");
+                if (!isOk)
+                {
+                    //TODO: Display cancellation message.
+                    return;
+                }
+            }
 
-	[RelayCommand]
-	public async Task LoadFile()
-	{
-		var items = await _rosterDatabase.GetItemsAsync();
-		Rosters = new ObservableCollection<Roster>(items);
-	}
 
-	private async void InitService()
-	{
-		await Task.Run(() =>
-		{
-			_barcodeQRCodeService = new DynamsoftBarcodeQRCodeService();
+            crewMember.Registrations ??= new List<Registration>();
 
-			try
-			{
-				_barcodeQRCodeService.InitSDK("DLS2eyJoYW5kc2hha2VDb2RlIjoiMTAxNzM4OTgwLVRYbE5iMkpwYkdWUWNtOXFYMlJpY2ciLCJtYWluU2VydmVyVVJMIjoiaHR0cHM6Ly9tbHRzLmR5bmFtc29mdC5jb20iLCJvcmdhbml6YXRpb25JRCI6IjEwMTczODk4MCIsImNoZWNrQ29kZSI6LTYyNTkwNDA2OX0=");
-			}
-			catch (Exception ex)
-			{
-				System.Console.WriteLine($"Error: {ex.Message}");
-			}
+            var registration = crewMember.Registrations.FirstOrDefault(r => r.CheckOutTime == default);
+            if (registration is null)
+            {
+                registration = new Registration
+                {
+                    CrewMemberId= crewMember.Id,
+                    CheckInTime = DateTimeOffset.Now,
+                    DocumentNumber = IdCard.IdNumber,
+                    DrivingAllowed = DateTime.Now < IdCard.ExpirationDate
+                };
 
-			return Task.CompletedTask;
-		});
-	}
+                crewMember.Registrations.Add(registration);
+                await Shell.Current.DisplayAlert("Check-In", "Success!", "OK");
+            }
+            else
+            {
+                registration.CheckOutTime = DateTimeOffset.Now;
+                localDataService.Update(registration);
+
+                await Shell.Current.DisplayAlert("Check-Out", "Success!", "OK");
+            }
+
+            localDataService.Update(crewMember);
+        }
+        finally
+        {
+            IdCard = null;
+            IsScanning = true;
+        }
+    }
+
+    partial void OnIsScanningChanged(bool value)
+    {
+        Debug.WriteLine($"IsScanning changed to {value}");
+    }
+
 }

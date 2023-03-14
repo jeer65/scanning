@@ -2,7 +2,6 @@
 
 	<PropertyGroup>
 		<TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>MauiAppScanning</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -46,22 +45,42 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Remove="Resources\Database\Scan.db" />
+	  <AndroidResource Remove="Data\**" />
+	  <AndroidResource Remove="Resources\Database\**" />
+	  <Compile Remove="Data\**" />
+	  <Compile Remove="Resources\Database\**" />
+	  <EmbeddedResource Remove="Data\**" />
+	  <EmbeddedResource Remove="Resources\Database\**" />
+	  <MauiCss Remove="Data\**" />
+	  <MauiCss Remove="Resources\Database\**" />
+	  <MauiXaml Remove="Data\**" />
+	  <MauiXaml Remove="Resources\Database\**" />
+	  <None Remove="Data\**" />
+	  <None Remove="Resources\Database\**" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="3.1.0" />
+		<PackageReference Include="BarcodeScanner.Mobile.Maui" Version="6.3.0.25-pre" />
+		<PackageReference Include="CommunityToolkit.Diagnostics" Version="8.1.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="5.0.0" />
 		<PackageReference Include="CommunityToolkit.MVVM" Version="8.1.0" />
+		<PackageReference Include="Dapper" Version="2.0.123" />
+		<PackageReference Include="Dapper.FastCrud" Version="3.1.46" />
 		<PackageReference Include="IdParser" Version="4.1.2" />
-		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.58" />
-		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+		<PackageReference Include="LiteDB" Version="5.0.16" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.0" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.59" />
+		<PackageReference Include="Z.Dapper.Plus" Version="5.0.0" />
 	</ItemGroup>
+
+  <!-- Have to include this package here otherwise build will be failed -->
+  <ItemGroup Condition="(  '$(TargetFramework)' == 'net6.0-android' )">
+    <PackageReference Include="Xamarin.Google.MLKit.BarcodeScanning" Version="116.1.2.5">
+    </PackageReference>
+  </ItemGroup>
 
 	<ItemGroup>
 		<Compile Update="Platforms\iOS\CustomMediaPicker.cs">
-		  <ExcludeFromCurrentConfiguration>false</ExcludeFromCurrentConfiguration>
-		</Compile>
-		<Compile Update="Platforms\iOS\DynamsoftBarcodeQRCodeService.cs">
 		  <ExcludeFromCurrentConfiguration>false</ExcludeFromCurrentConfiguration>
 		</Compile>
 		<Compile Update="Resources\Strings\AppResources.es.Designer.cs">
@@ -85,29 +104,6 @@
 			<Generator>ResXFileCodeGenerator</Generator>
 			<LastGenOutput>AppResources.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="Data\" />
-		<Folder Include="Resources\Database\" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
-		<PackageReference Include="Barcode.NET.Mobile">
-			<Version>1.0.2</Version>
-		</PackageReference>
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
-		<PackageReference Include="Barcode.NET.Mobile">
-			<Version>1.0.2</Version>
-		</PackageReference>
-	</ItemGroup>
-
-	<ItemGroup Condition="$(TargetFramework.Contains('-windows')) == true">
-		<PackageReference Include="BarcodeQRCodeSDK">
-			<Version>2.1.0</Version>
-		</PackageReference>
 	</ItemGroup>
 
 	<PropertyGroup Label="MauiAppAccelerator">

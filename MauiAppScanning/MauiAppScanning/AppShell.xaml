@@ -12,19 +12,13 @@
 		Icon="iconblank.png"
 		ContentTemplate="{DataTemplate views:MainPage}"
 		Route="MainPage" />
-	<ShellContent
-		Shell.NavBarIsVisible="true"
-		Title="ListDetail"
-		Icon="iconlistdetail.png"
-		ContentTemplate="{DataTemplate views:ListDetailPage}"
-		Route="ListDetailPage" />
-	<ShellContent
-		Shell.NavBarIsVisible="true"
-		Title="Map"
-		Icon="iconmap.png"
-		ContentTemplate="{DataTemplate views:MapPage}"
-		Route="MapPage" />
-	<ShellContent
+    <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="Debug Screen"
+        Icon="iconlistdetail.png"
+        ContentTemplate="{DataTemplate views:ListDetailPage}"
+        Route="ListDetailPage" />
+    <ShellContent
 		Shell.NavBarIsVisible="true"
 		Title="Localization"
 		Icon="iconlocalization.png"

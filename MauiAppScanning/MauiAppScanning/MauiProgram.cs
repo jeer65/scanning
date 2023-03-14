@@ -1,43 +1,42 @@
-﻿namespace MauiAppScanning;
+﻿using BarcodeScanner.Mobile;
+using Microsoft.Extensions.Configuration;
+
+namespace MauiAppScanning;
 
 public static class MauiProgram
 {
-	public static MauiApp CreateMauiApp()
-	{
-		var builder = MauiApp.CreateBuilder();
-		builder
-			.UseMauiApp<App>()
-			.UseMauiCommunityToolkit()
-			.UseMauiMaps()
-			.ConfigureFonts(fonts =>
-			{
-				fonts.AddFont("FontAwesome6FreeBrands.otf", "FontAwesomeBrands");
-				fonts.AddFont("FontAwesome6FreeRegular.otf", "FontAwesomeRegular");
-				fonts.AddFont("FontAwesome6FreeSolid.otf", "FontAwesomeSolid");
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+    public static MauiApp CreateMauiApp()
+    {
+        var builder = MauiApp.CreateBuilder();
+        builder
+            .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
+            .UseMauiMaps()            
+            .ConfigureFonts(fonts =>
+            {
+                fonts.AddFont("FontAwesome6FreeBrands.otf", "FontAwesomeBrands");
+                fonts.AddFont("FontAwesome6FreeRegular.otf", "FontAwesomeRegular");
+                fonts.AddFont("FontAwesome6FreeSolid.otf", "FontAwesomeSolid");
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+            })
+            .ConfigureMauiHandlers(handlers =>
+            {
+                handlers.AddBarcodeScannerHandler();
+            });
 
-		builder.Services.AddTransient<SampleDataService>();
-		builder.Services.AddSingleton<RosterDatabase>();
+        BarcodeScanner.Mobile.Methods.SetSupportBarcodeFormat(BarcodeFormats.Pdf417 | BarcodeFormats.QRCode);
+        
+        builder.Services.AddSingleton<IMediaPicker, CustomMediaPicker>();
 
-		builder.Services.AddSingleton<IMediaPicker, CustomMediaPicker>();
+        builder.Services.AddSingleton<MainPage, MainViewModel>();
 
-		builder.Services.AddSingleton<MainViewModel>();
-		builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<ListDetailPage, ListDetailViewModel>();
 
-		builder.Services.AddTransient<ListDetailDetailViewModel>();
-		builder.Services.AddTransient<ListDetailDetailPage>();
+        builder.Services.AddSingleton<LocalizationPage, LocalizationViewModel>();        
 
-		builder.Services.AddSingleton<ListDetailViewModel>();
-		builder.Services.AddSingleton<ListDetailPage>();
+        builder.Services.AddSingleton<LocalDataService>();
 
-		builder.Services.AddSingleton<MapViewModel>();
-		builder.Services.AddSingleton<MapPage>();
-
-		builder.Services.AddSingleton<LocalizationViewModel>();
-		builder.Services.AddSingleton<LocalizationPage>();
-
-		return builder.Build();
-	}
+        return builder.Build();
+    }
 }

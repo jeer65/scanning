@@ -2,56 +2,46 @@
 
 public partial class ListDetailViewModel : BaseViewModel
 {
-	readonly SampleDataService dataService;
+    private readonly LocalDataService localDataService;
 
-	[ObservableProperty]
-	bool isRefreshing;
+    [ObservableProperty]
+    bool isRefreshing;
 
-	[ObservableProperty]
-	ObservableCollection<SampleItem> items;
+    [ObservableProperty]
+    ObservableCollection<CrewMember> crewMembers;
 
-	public ListDetailViewModel(SampleDataService service)
-	{
-		dataService = service;
-	}
+    public ListDetailViewModel(LocalDataService localDataService)
+    {
+        this.localDataService = localDataService;
+    }
 
-	[RelayCommand]
-	private async void OnRefreshing()
-	{
-		IsRefreshing = true;
+    [RelayCommand]
+    public void LoadFromLocal()
+    {
+        CrewMembers = new ObservableCollection<CrewMember>(localDataService.FindAll<CrewMember>());
+    }
 
-		try
-		{
-			await LoadDataAsync();
-		}
-		finally
-		{
-			IsRefreshing = false;
-		}
-	}
+    [RelayCommand]
+    public async Task LoadFromCloud()
+    {
+        await localDataService.SyncFromCloud();
+        LoadFromLocal();
+    }
 
-	[RelayCommand]
-	public async Task LoadMore()
-	{
-		var items = await dataService.GetItems();
+    [RelayCommand]
+    public async Task SendToCloud()
+    {
+        await localDataService.SyncToCloud();
+    }
 
-		foreach (var item in items)
-		{
-			Items.Add(item);
-		}
-	}
-
-	public async Task LoadDataAsync()
-	{
-		Items = new ObservableCollection<SampleItem>(await dataService.GetItems());
-	}
-
-	[RelayCommand]
-	private async void GoToDetails(SampleItem item)
-	{
-		await Shell.Current.GoToAsync(nameof(ListDetailDetailPage), true, new Dictionary<string, object>
-		{
-			{ "Item", item }
-		});
-	}
+    [RelayCommand]
+    public void DeleteRegistrations()
+    {
+        foreach (var member in CrewMembers)
+        {
+            member.Registrations?.Clear();
+            localDataService.Update(member);
+        }
+        LoadFromLocal();
+    }
 }
